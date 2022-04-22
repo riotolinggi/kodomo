@@ -15,7 +15,7 @@ GET http://127.0.0.1:5000/api/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjE2ZGJjYjc2OWExMmIzYzI2ODA1ZSIsImlhdCI6MTY0NjM1ODEzOCwiZXhwIjoxNjQ2MzU4MTU4fQ.bXFUYEGpCVOA9ww_m8ezcC6ngQwTsttQ-C6droRgMQM
 
 ###
-POST  http://127.0.0.1:5000/api/users/login
+POST  http://128.199.165.221:5000/api/users/login
 Accept: application/json
 Content-Type: application/json
 
@@ -37,7 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGE5NTQ5Z
 GET http://127.0.0.1:5000/api/users/token
 
 ###
-DELETE http://127.0.0.1:5000/api/users/logout
+DELETE http://128.199.165.221:5000/api/users/logout
 
 ###
 PUT http://127.0.0.1:5000/api/users/forgotpassword

@@ -1,12 +1,30 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/sidebar/Sidebar";
+import { getToken } from "../features/token/tokenSlice";
 
 const Admin = () => {
   const { showSidebar } = useSelector((state) => state.dashboard);
-  return (
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(getToken())
+      .then((res) => {
+        const result = res.payload;
+        return result;
+      })
+      .then((result) => {
+        if (!result.success || !user) {
+          navigate("/");
+        }
+      });
+  }, [dispatch, navigate, user]);
+
+  const renderDashboard = (
     <div className='relative flex min-h-screen bg-blue-100'>
       {/* Sidebar */}
       <div
@@ -25,6 +43,7 @@ const Admin = () => {
       </div>
     </div>
   );
+  return renderDashboard;
 };
 
 export default Admin;
