@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 import "dotenv/config";
 import cors from "cors";
 
-const whiteList = ["http://localhost:3000"];
+const whiteList = ["http://localhost:3000","http://10.104.0.3"];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whiteList.indexOf(origin) !== -1 || !origin) {
