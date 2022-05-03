@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_TOKEN = "http://localhost:5000/api/users/token";
+const API_URL_TOKEN = "http://10.104.0.3:5000/api/users/token";
 
 const axiosJWT = axios.create();
 axiosJWT.interceptors.request.use(
